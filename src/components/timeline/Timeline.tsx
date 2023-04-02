@@ -8,12 +8,9 @@ function Timeline() {
     {id: 1, stepNumber: 1, classes: 'timeline__step timeline__step_complete'},
     {id: 2, stepNumber: 2, classes: 'timeline__step timeline__step_inprogress'},
   ]);
-  // const [counter, setCounter] = useState(2);
 
   const addStep = () => {
     if (steps.length < 10) {
-      // setCounter(count => count + 1);
-
       const stepItem = {
         id: steps.length + 1,
         stepNumber: steps.length + 1,
@@ -25,7 +22,6 @@ function Timeline() {
 
   const removeStep = () => {
     if (steps.length > 2) {
-      // setCounter(count => count - 1);
       setStep(steps.slice(0, -1));
     }
   };
@@ -34,21 +30,13 @@ function Timeline() {
     <>
       <div className={"timeline " + view}>
         <div className="timeline__wrapper">
-          {/* <div className="timeline__step timeline__step_complete">
-            <div className="timeline__label">Step 1</div>
-            <span></span>
-          </div>
-          <div className="timeline__step timeline__step_inprogress">
-            <div className="timeline__label">Step 2</div>
-            <span></span>
-          </div> */}
-
           {steps.map(step => {
             return (
-              <Step step={step} key={step.id} stepNumber={0} classes={""} />
+              <Step step={step} />
             )
           })}
         </div>
+
         <div className="timeline__step timeline__step-additional">
           <span></span>
         </div>
@@ -76,15 +64,10 @@ function Timeline() {
 
         <div className="control-panel__steps">
           <div className="control-panel__label">Steps</div>
+
           <div className="control-panel__wrapper">
             <button type="button" className="button" onClick={removeStep}>-</button>
-            <input
-              type="number"
-              name="stepsQuantity"
-              id="stepsQuantity"
-              value={steps.length}
-              readOnly
-            />
+            <input type="number" name="stepsQuantity" id="stepsQuantity" value={steps.length} readOnly />
             <button type="button" className="button" onClick={addStep}>+</button>
           </div>
         </div>

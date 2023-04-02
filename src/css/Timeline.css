@@ -57,6 +57,7 @@
   left: -9px;
   bottom: 20px;
   transition: left var(--anim), top var(--anim), bottom var(--anim);
+  min-width: 34px;
   max-width: 60px;
 }
 

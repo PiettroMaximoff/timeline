@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Step({step, stepNumber, classes} : {step: any, stepNumber: number, classes: string}) {
+function Step({step} : {step: any}) {
 
   const changeStatus = evt => {
     const self = evt.currentTarget;
