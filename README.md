@@ -2,7 +2,7 @@
 
 ## Запуск проекта
 
-npm run preview
+npm run build -> npm run preview
 
 ## Функции проекта
 
